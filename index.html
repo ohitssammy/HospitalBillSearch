@@ -5,9 +5,9 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
-      /* Always set the map height explicitly to define the size of the div
+            /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
+       #map {
         height: 100%;
 	      width: 50%;
       }
@@ -45,11 +45,13 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         background-color: #fff;
         font-family: Roboto;
+        
       }
 
       #pac-container {
         padding-bottom: 12px;
         margin-right: 12px;
+    
       }
 
       .pac-controls {
@@ -63,6 +65,8 @@
         font-weight: 300;
       }
 
+      /*search bar*/
+
       #pac-input {
         background-color: #fff;
         font-family: Roboto;
@@ -72,6 +76,7 @@
         padding: 0 11px 0 13px;
         text-overflow: ellipsis;
         width: 400px;
+ 
       }
 
       #pac-input:focus {
@@ -81,7 +86,7 @@
       #title {
         color: #fff;
         background-color: #4d90fe;
-        font-size: 27px;
+        font-size: 2px;
         font-weight: 500;
         padding: 6px 12px;
       }
@@ -90,21 +95,103 @@
       }
 
 
+      /*resultbar*/
+      ​
+      #right-panel {
+      font-family: 'Roboto','sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
+      }
+​
+      #right-panel select, #right-panel input {
+      font-size: 15px;
+      }
+​
+      #right-panel select {
+      width: 100%;
+      }
+​
+      #right-panel i {
+      font-size: 12px;
+      }
+      #right-panel {
+      font-family: Arial, Helvetica, sans-serif;
+      position: absolute;
+      left: 1%;
+      top: 50%;
+      margin-top: -300px;
+      height: 530px;
+      width: 230px;
+      padding: 5px;
+      z-index: 5;
+      border: 1px solid #999;
+      background: #fff;
+      }
+      h2 {
+      font-size: 18px;
+      font-family: 'Roboto','sans-serif';
+      margin: 0 0 5px 0;
+      padding: 5px;
+      }
 
+      /* result more result button */
+      ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      height: 470px;
+      width: 223px;
+      overflow-y: scroll;
+      }
 
+      li {
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap; 
+      overflow: hidden;
+      width: 250px;
+      }
+      li:nth-child(odd) {
+      background-color: #fcfcfc;
+    
+      }
+
+      li:hover {
+        background-color: lightyellow;
+        }
+      #more {
+      width: 100%;
+      /* margin: 5px 0 0 0; */
+      }
 
     </style>
+    
   </head>
   <body>
-    <div id="map"></div>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    <!-- table results -->
+    <div id="right-panel">
+      <h2 id= "table-label">Results</h2>
+      <ul id="places"></ul>
+      <button id="more">More results</button>
+    </div>
 
-    <script src="server.js"></script>  
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQE1OpIbeAAYrxnXAAZCBfL1z5o3WV8Ys&callback=initMap"
-    async defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQE1OpIbeAAYrxnXAAZCBfL1z5o3WV8Ys&libraries=places"></script>
+
+
+
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQE1OpIbeAAYrxnXAAZCBfL1z5o3WV8Ys&libraries=places"></script> -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQE1OpIbeAAYrxnXAAZCBfL1z5o3WV8Ys&libraries=places&callback=initMap" async defer></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQE1OpIbeAAYrxnXAAZCBfL1z5o3WV8Ys&libraries=places&callback=initAutocomplete"
-         async defer></script>
+    async defer></script> 
+    <script src="server.js"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQE1OpIbeAAYrxnXAAZCBfL1z5o3WV8Ys&callback=initMap" -->
+    <!-- async defer></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    
   
   </body>
 </html>
