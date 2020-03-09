@@ -24,7 +24,7 @@ function initMap() {
     },
     radius: 10000,
     keyword: "hotel",
-    key: "AIzaSyDQE1OpIbeAAYrxnXAAZCBfL1z5o3WV8Ys"
+    key: "-"
   }
 
   service = new google.maps.places.PlacesService(map);
